@@ -113,7 +113,8 @@ RCT_EXPORT_METHOD(getFromResponse:(NSURL *)url
 
     NSMutableString *result = [[NSMutableString alloc]init];
     for (NSUInteger i = startPosition; i != endPosition; i++) {
-        [result appendString:separator];
+        if(i > startPosition)
+            [result appendString:separator];
         [result appendString:[separatedHost objectAtIndex:i]];
     }
     return result;
